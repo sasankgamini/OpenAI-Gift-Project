@@ -27,14 +27,14 @@ def home():
         chat = openai.ChatCompletion.create(model='gpt-3.5-turbo', messages = messages)
         reply = chat.choices[0]
         # print(reply['message']['content'])
-        perfectgift = reply['message']['content']
+        home.perfectgift = reply['message']['content']
 
         return redirect('/results')
 
 @app.route('/results', methods = ["GET","POST"])
 def results():
     if request.method == "GET":
-        return render_template("results.html", perfectgift=perfectgift)
+        return render_template("results.html", perfectgift=home.perfectgift)
 
 
 if __name__ == '__main__': #checking if in actual application and running
