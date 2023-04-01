@@ -9,17 +9,21 @@
 
 <body>
     <div class="container">
-
-
         <div class="bg-light p-3 text-center">
             <h1>Choose Your Perfect Gift</h1>
         </div>
-
-        <div>
-            <p>{{perfectgift}}</p>
+        {%for i in range(0,5,1)%}
+        <div class="row justify-content-center">
+            <div class="col-6 bg-light text-center p-3">
+                <p>{{gifts[i]}}</p>
+                <a href={{amazonlinks[i]}}>amazon link</a>
+                <br> 
+            </div>
         </div>
+        {%endfor%}
 
-        
+
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"

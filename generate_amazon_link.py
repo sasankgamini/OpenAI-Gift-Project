@@ -10,6 +10,7 @@ def generate_amazon_link(product_name):
     return base_url + encoded_params
 
 # Example usage
-product_name = input('Enter a product name: ')
-amazon_link = generate_amazon_link(product_name)
-print('Amazon link:', amazon_link)
+if __name__ == "__main__":
+    product_name = input('Enter a product name: ')
+    amazon_link = generate_amazon_link(product_name)
+    print('Amazon link:', amazon_link)
