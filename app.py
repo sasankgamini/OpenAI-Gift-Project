@@ -33,7 +33,6 @@ def home():
         home.amazonlinks = []
         for gift in home.gifts:
             home.amazonlinks.append(generate_amazon_link.generate_amazon_link(gift))
-        # print(gifts)
 
         return redirect('/results')
 
