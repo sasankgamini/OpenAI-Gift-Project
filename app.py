@@ -1,10 +1,14 @@
 from flask import Flask, render_template, redirect, request
 import generate_amazon_link
 import openai
+import os
 
-file = open('APIKey.txt', 'r')
-apikey = file.read().strip()
-file.close()
+if os.environ.get('OPENAIAPIKEY') == None:
+    file = open('APIKey.txt', 'r')
+    apikey = file.read().strip()
+    file.close()
+else:
+    apikey = os.environ.get('OPENAIAPIKEY')
 openai.api_key = apikey
 questions = ["What are the recipient's hobbies or interests?",
 "Is there a specific occasion or event that the gift is for?",
